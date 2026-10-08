@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09131b">
+  <title>明单 · 设计师询单工作台</title>
+  <script src="/api/account-bootstrap.js"></script>
+  <link rel="stylesheet" href="studio.css?v=20260929c">
+  <link rel="stylesheet" href="cinematic.css?v=20260929b">
+  <link rel="stylesheet" href="narrative.css?v=20260929b">
+  <link rel="stylesheet" href="stage3.css?v=20260929b">
+  <link rel="stylesheet" href="stage4.css?v=20261001e">
+  <link rel="stylesheet" href="pricing.css?v=20261001a">
+  <link rel="stylesheet" href="glass.css?v=20261002a">
+</head>
+<body class="glass-workbench">
+  <a class="skip-link" href="#view">跳转到工作区</a>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M7 6h8v20H7zM20 6h5v9h-5zM20 20h5v6h-5z" fill="currentColor"/></svg></span><div><strong>明单</strong><small>为创作，厘清每一单</small></div></div>
+      <div class="side-project"><span class="project-icon" aria-hidden="true">明</span><div><strong id="sideOrderTitle">未命名订单</strong><small id="sideOrderClient">本地订单</small></div></div>
+      <div class="side-section">订单工作流</div>
+      <nav class="navigation" aria-label="订单流程">
+        <button type="button" data-page="0"><span>01</span>客户消息</button>
+        <button type="button" data-page="1"><span>02</span>核对与报价</button>
+        <button type="button" data-page="2"><span>03</span>确认单</button>
+        <button type="button" data-page="3"><span>04</span>变更与版本</button>
+      </nav>
+      <div class="side-bottom"><div class="local-status"><i></i>草稿保存在此浏览器</div><p>建议定期导出备份。客户确认仍须人工核对并记录。</p></div>
+    </aside>
+    <main class="main">
+      <div class="topbar"><span id="breadcrumb"></span><div class="topbar-end"><label class="sr-only" for="orderSelect">切换订单</label><select id="orderSelect" aria-label="切换订单"></select><button type="button" class="topbar-button" data-action="new-order">新建订单</button><span class="mode-badge">设计师工作台</span></div></div>
+      <div id="projectStatus" class="project-status"></div>
+      <div id="view" tabindex="-1"></div>
+      <footer>明单 · AI 候选由设计师核对，客户回复绑定确认版本</footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" hidden role="status" aria-live="polite"></div>
+  <input id="backupFile" type="file" accept="application/json,.json" hidden>
+  <script src="engine.js?v=20260930a" defer></script>
+  <script src="v2.js?v=20261002beta" defer></script>
+  <script src="stage4.js?v=20261002beta" defer></script>
+  <script type="module" src="pricing.js?v=20261003beta"></script>
+  <script src="motion.js?v=20260929e" defer></script>
+  <script src="webmcp.js?v=20261002a" defer></script>
+</body>
+</html>

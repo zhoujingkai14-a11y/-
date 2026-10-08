@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#08121a">
+  <meta name="description" content="明单，把客户消息整理成可核对的交付范围、报价与版本确认。通过一个虚构案例体验完整流程。">
+  <title>明单 · 把一笔委托说清楚</title>
+  <link rel="stylesheet" href="showcase.css?v=20261002c">
+  <link rel="stylesheet" href="glass.css?v=20261002d">
+  <script src="showcase.js?v=20261002c" defer></script>
+  <script src="glass-motion.js?v=20261002d" defer></script>
+</head>
+<body class="glass-showcase">
+  <a class="skip-link" href="#demo">跳转到交互演示</a>
+  <header class="site-header wrap">
+    <a class="brand" href="#top" aria-label="明单作品首页"><svg aria-hidden="true" viewBox="0 0 32 32" fill="none"><path d="M7 6h8v20H7zM20 6h5v9h-5zM20 20h5v6h-5z" fill="currentColor"/></svg><strong>明单</strong></a>
+    <nav aria-label="页面导航"><a href="#principles">产品思路</a><a id="workbenchLink" href="v2.html">打开工作台<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></a></nav>
+  </header>
+  <main id="top" class="wrap">
+    <section class="intro" aria-labelledby="introTitle">
+      <div class="hero-copy"><h1 id="introTitle">把一笔委托<br><span>说清楚</span></h1>
+        <div class="intro-aside"><p>从客户随口说的要求，到双方看得懂的约定。<br>理清交付、按自己的标准报价，<br>让每一次变化都有来处。</p><a class="intro-action" href="#demo">体验一笔订单<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+      </div>
+      <div class="hero-experience">
+        <div id="heroStudio" class="hero-studio" data-phase="quote" aria-label="虚构案例：原话归整为需求与报价，新增交付保留旧版本">
+          <svg class="studio-geometry" aria-hidden="true" viewBox="0 0 600 520" preserveAspectRatio="none">
+            <g class="artboard-frame"><path d="M38 30H568V458H38Z"/><path class="alignment-guide" d="M210 16V478M24 106H585M24 422H585"/>
+              <g class="anchor-handles"><rect x="34" y="26" width="8" height="8"/><rect x="564" y="26" width="8" height="8"/><rect x="34" y="454" width="8" height="8"/><rect x="564" y="454" width="8" height="8"/><rect x="296" y="26" width="8" height="8"/></g>
+              <path class="bezier-guide" d="M51 130L151 130M82 368L178 368"/><circle cx="51" cy="130" r="4"/><circle cx="178" cy="368" r="4"/>
+            </g>
+            <g class="evidence-traces"><path class="evidence-trace" d="M150 182C188 182 172 157 218 157"/><path class="evidence-trace" d="M150 269C194 269 177 234 218 234"/><path class="evidence-trace" data-later d="M150 356C195 356 177 311 218 311"/></g>
+            <g class="mobile-evidence-traces"><path class="evidence-trace" d="M104 105C104 130 166 130 222 130"/><path class="evidence-trace" d="M300 105V130"/><path class="evidence-trace" data-later d="M496 105C496 130 432 130 366 130"/></g>
+            <g class="studio-cursor"><path d="M0 0L0 26L8 19L15 31L21 27L14 15L25 13Z"/></g>
+          </svg>
+          <div class="artboard-label" aria-hidden="true"><span class="palette-chip"></span>画板 · 需求归整<span class="layout-measure">对齐 / 留白 / 层次</span></div>
+          <div class="hero-evidence"><p>客户原话</p><div class="source-snippet"><span>01</span>做一张开业海报</div><div class="source-snippet"><span>02</span>朋友圈和小红书<br>各一个尺寸</div><div class="source-snippet" data-later><span>03</span><div><small id="heroLaterState">待追加</small>再加两张店内海报</div></div></div>
+          <article id="heroPrior" class="hero-prior" hidden aria-label="保留旧报价版本 V1，800元"><p>需求与报价 · V1</p><p>原交付范围保留</p></article>
+          <div id="heroRetained" class="hero-retained" hidden><span>V1 · 已保留</span><strong>¥800</strong></div>
+          <article class="hero-document" aria-label="虚构需求与报价草稿">
+            <h2>青禾咖啡 · 开业视觉</h2><div class="hero-document-meta"><span id="heroVersion">需求与报价草稿 V1</span><span>待人工核对</span></div>
+            <ul><li><strong>开业主海报 × 1</strong><b>¥600</b><small>原话：做一张开业海报</small></li><li><strong>尺寸适配 × 2</strong><b>¥200</b><small>原话：朋友圈和小红书各一个尺寸</small></li><li id="heroAddition" class="hero-addition" hidden><strong>新增店内海报 × 2</strong><b>+ ¥800</b><small>示例个人标准：¥400 / 张</small></li></ul>
+            <p id="heroCondition" class="hero-condition">修改次数与源文件条件仍待核对。</p><div class="hero-total"><span>按示例个人标准计算</span><strong id="heroTotal">¥800</strong></div>
+          </article>
+          <p id="heroNarrative" class="hero-narrative">原话有来处，报价有依据。</p>
+        </div>
+        <p class="hero-caption">虚构演示案例 · 示例价格由设计师设定</p>
+      </div>
+    </section>
+    <section id="demo" class="demo" aria-labelledby="demoTitle">
+      <div class="demo-bar"><div><h2 id="demoTitle">青禾咖啡 · 新店开业</h2><p>虚构演示案例 · 示例价格由设计师设定</p></div></div>
+      <div class="demo-body">
+        <nav class="steps" aria-label="订单演示流程">
+          <button type="button" data-step="0" aria-current="step"><span class="step-number">01</span><span>客户消息<small>保留客户的表达</small></span></button>
+          <button type="button" data-step="1"><span class="step-number">02</span><span>核对与报价<small>范围与价格有依据</small></span></button>
+          <button type="button" data-step="2"><span class="step-number">03</span><span>客户确认<small>确认这一版的约定</small></span></button>
+          <button type="button" data-step="3"><span class="step-number">04</span><span>变更与版本<small>清楚看见改了什么</small></span></button>
+        </nav>
+        <div class="scene-frame"><div id="scene"></div></div>
+      </div>
+      <div class="demo-footer"><p id="sceneStatus" role="status" aria-live="polite"></p><div><button id="previousButton" class="quiet-button" type="button">上一步</button><button id="nextButton" class="next-button" type="button">核对与报价<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></div>
+    </section>
+    <noscript><p class="no-script">此交互演示需要 JavaScript。开启后可切换四个流程；真实工作台也需要 JavaScript。</p></noscript>
+    <section id="principles" class="principles" aria-labelledby="principlesTitle">
+      <div class="principles-heading"><h2 id="principlesTitle">报价背后，<br>是共同理解的范围。</h2><p>明单的价值，是把需求、价格和确认放在同一条线上。AI 帮忙读懂消息，设计师保留判断，客户只需看懂约定。</p></div>
+      <dl><div><dt>每条需求，回到原话。</dt><dd>候选项附带原文依据；数量不明、日期冲突，就留待确认。方便纠正理解，也方便追问。</dd></div><div><dt>个人标准，算出自己的报价。</dt><dd>复用设计师自己的价目表，程序计算金额。包含的修改与设计师失误，不自动当成新增收费。</dd></div><div><dt>一版一确认，变化有记录。</dt><dd>客户查看范围、条件与金额。后续新增交付形成新版本，旧报价与已确认内容保留下来。</dd></div></dl>
+    </section>
+    <section class="closing" aria-labelledby="closingTitle"><h2 id="closingTitle">让创作从明确开始。</h2><p>公开免费测试，注册后整理你自己的第一笔需求。</p><a id="closingLink" class="next-button" href="account.html#register">免费创建账号<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></a><p id="localHint" class="local-hint" hidden>此页面可离线演示。真实工作台需先启动明单服务。</p></section>
+  </main>
+  <footer class="site-footer wrap"><span>明单 · 需求、报价与版本确认助手 · <a href="data.html">使用与数据说明</a></span><span>本页为固定案例演示，无真实 AI 调用或订单写入。</span></footer>
+</body>
+</html>

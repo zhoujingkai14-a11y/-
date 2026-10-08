@@ -1,0 +1,16 @@
+**
+!deploy/
+!deploy/public-node.mjs
+!deploy/public-backup.mjs
+!sites-mingdan/
+!sites-mingdan/server/
+!sites-mingdan/server/*.mjs
+sites-mingdan/server/*.test.mjs
+!sites-mingdan/public/
+!sites-mingdan/public/prototype/
+!sites-mingdan/public/prototype/*
+!sites-mingdan/drizzle/
+!sites-mingdan/drizzle/*.sql
+!LICENSE
+!NOTICE
+!THIRD_PARTY_NOTICES.md

@@ -1,0 +1,6 @@
+{$MINGDAN_DOMAIN} {
+    encode zstd gzip
+    reverse_proxy app:8765 {
+        header_up X-Mingdan-Client-IP {http.request.remote.host}
+    }
+}

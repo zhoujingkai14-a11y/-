@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>明单 · 注册与登录</title>
+  <link rel="stylesheet" href="account.css?v=20261004public">
+  <script src="account.js?v=20261004public" defer></script>
+</head>
+<body class="account-page">
+  <header class="account-nav">
+    <a class="brand" href="showcase.html" aria-label="明单首页"><svg aria-hidden="true" viewBox="0 0 32 32" fill="none"><path d="M7 6h8v20H7zM20 6h5v9h-5zM20 20h5v6h-5z" fill="currentColor"/></svg><strong>明单</strong></a>
+    <a class="quiet-link" href="showcase.html">返回首页 <svg class="arrow-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+  </header>
+  <main class="auth-layout">
+    <section class="auth-intro" aria-labelledby="introHeading">
+      <h1 id="introHeading">自己的标准<br><span>自己的工作区</span></h1>
+      <p class="intro-description">把客户的想法整理清楚，让范围、报价和每次确认都有来处。</p>
+      <ul class="intro-steps">
+        <li><div><strong>独立留存</strong><p>需求、价格表和历史版本归属于你的账号。</p></div></li>
+        <li><div><strong>AI 帮你整理</strong><p>核对原话和遗漏，再按自己的标准报价。</p></div></li>
+        <li><div><strong>客户直接确认</strong><p>客户通过专属链接核对，无需注册设计师账号。</p></div></li>
+      </ul>
+      <p class="intro-footnote">公开免费测试 · 注册即可使用 · 无自动扣费</p>
+    </section>
+    <section class="auth-panel" aria-labelledby="formHeading">
+      <h2 id="formHeading">设计师登录</h2>
+      <p class="muted" id="formDescription">使用你的邮箱和密码，回到自己的工作区。</p>
+      <p id="authStatus" class="message" role="status" aria-live="polite" hidden></p>
+      <form id="accountForm">
+        <div class="bot-field" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <div class="form-field" id="emailField">
+          <label for="email">邮箱</label>
+          <input id="email" name="email" type="email" autocomplete="username" maxlength="254" required placeholder="name@example.com">
+        </div>
+        <div class="form-field" id="nameField" hidden>
+          <label for="displayName">怎么称呼你</label>
+          <input id="displayName" name="name" autocomplete="nickname" maxlength="40" placeholder="设计师称呼">
+        </div>
+        <div class="form-field">
+          <label for="password" id="passwordLabel">密码</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" maxlength="128" required>
+          <p class="field-help" id="passwordHelp" hidden>12—128 个字符，可以使用密码管理器生成并保存。</p>
+        </div>
+        <div class="form-field" id="confirmField" hidden>
+          <label for="confirmPassword">再次输入密码</label>
+          <input id="confirmPassword" type="password" autocomplete="new-password" maxlength="128">
+        </div>
+        <div class="form-field" id="recoveryField" hidden>
+          <label for="recoveryKey">账号恢复密钥</label>
+          <input id="recoveryKey" type="text" autocomplete="off" spellcheck="false" maxlength="43" aria-describedby="recoveryHelp">
+          <p class="field-help" id="recoveryHelp">使用注册时保存的密钥。重置密码后，旧密钥和旧登录会失效。</p>
+        </div>
+        <label class="consent" id="consentField" hidden>
+          <input id="aiConsent" type="checkbox">
+          <span>我已阅读<a href="data.html" target="_blank" rel="noreferrer">使用与数据说明</a>，了解点击 AI 整理或建议时，相关资料会发送至 DeepSeek；上传前需脱敏，结果需人工核对。</span>
+        </label>
+        <button class="primary-button full-width" id="submitButton" type="submit">登录工作台 <svg class="arrow-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></button>
+      </form>
+      <div class="auth-notes" id="loginNotes">
+        <p><button class="text-button" id="registerSwitch" type="button">尚无账号？免费注册</button></p>
+        <p><button class="text-button" id="recoverSwitch" type="button">忘记密码？使用恢复密钥</button></p>
+      </div>
+      <p class="field-help" id="emailNotice" hidden>邮箱仅作登录标识，当前不发送验证邮件。注册后请保存恢复密钥。</p>
+      <div class="auth-switch"><button class="text-button" id="modeSwitch" type="button">管理者入口</button><span>独立账号 · 工作区隔离</span></div>
+      <section id="recoveryPanel" aria-labelledby="recoveryHeading" hidden>
+        <h2 id="recoveryHeading">保存你的恢复密钥</h2>
+        <p class="muted">忘记密码时，用邮箱和这串密钥恢复账号。它只显示这一次，请保存在密码管理器中，不要交给别人。</p>
+        <div class="form-field"><label for="savedRecoveryKey">恢复密钥</label><input id="savedRecoveryKey" type="text" readonly autocomplete="off" spellcheck="false"></div>
+        <button class="secondary-button full-width" id="copyRecoveryKey" type="button">复制恢复密钥</button>
+        <label class="consent"><input id="recoverySaved" type="checkbox"><span>我已妥善保存恢复密钥。</span></label>
+        <button class="primary-button full-width" id="enterWorkbench" type="button" disabled>进入我的工作台</button>
+      </section>
+    </section>
+  </main>
+</body>
+</html>

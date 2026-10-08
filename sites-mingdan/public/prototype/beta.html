@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>明单 · 账号与用量</title>
+  <script src="/api/account-bootstrap.js"></script>
+  <link rel="stylesheet" href="account.css?v=20261004public">
+  <script src="beta.js?v=20261004public" defer></script>
+</head>
+<body class="beta-page">
+  <header class="account-nav">
+    <a class="brand" href="showcase.html" aria-label="明单首页"><svg aria-hidden="true" viewBox="0 0 32 32" fill="none"><path d="M7 6h8v20H7zM20 6h5v9h-5zM20 20h5v6h-5z" fill="currentColor"/></svg><strong>明单</strong></a>
+    <div class="nav-actions"><a class="quiet-link" href="v2.html">返回工作台 <svg class="arrow-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></a><button class="text-button" id="logoutButton" type="button">退出账号</button></div>
+  </header>
+  <main class="beta-layout">
+    <div class="page-title"><div><h1 id="pageHeading">账号与用量</h1><p class="muted" id="accountIdentity">正在读取账号…</p></div><span class="status-pill">公开免费测试 · 无自动扣费</span></div>
+    <p id="pageMessage" class="message" role="status" aria-live="polite" hidden></p>
+    <section aria-labelledby="usageHeading" class="usage-section">
+      <div class="section-heading"><h2 id="usageHeading">AI 用量</h2><button class="text-button" id="refreshButton" type="button">刷新用量</button></div>
+      <p id="usageMessage" class="message" role="status" aria-live="polite" hidden></p>
+      <div id="usageCards" class="metric-grid" aria-busy="true"><p class="metric-state muted">正在加载额度与预算…</p></div>
+      <p id="usageNote" class="field-help"></p>
+    </section>
+    <div id="ownerArea" hidden>
+      <section class="beta-section" aria-labelledby="policyHeading">
+        <div class="section-heading"><h2 id="policyHeading">本轮开关</h2><span class="muted">暂停后仍保留已有数据</span></div>
+        <div class="policy-row"><div><strong>AI 调用</strong><p class="muted" id="aiPolicyLabel">正在读取</p></div><button class="secondary-button" id="toggleAI" type="button">暂停 AI</button></div>
+        <div class="policy-row"><div><strong>新账号注册</strong><p class="muted" id="registrationPolicyLabel">正在读取</p></div><button class="secondary-button" id="toggleRegistration" type="button">暂停注册</button></div>
+        <p id="policyMessage" class="message" role="status" aria-live="polite" hidden></p>
+      </section>
+      <section class="beta-section" aria-labelledby="inviteHeading">
+        <div class="section-heading"><h2 id="inviteHeading">专属注册与恢复链接</h2><span class="status-pill" id="seatsLabel">正在读取账号数量</span></div>
+        <p class="muted">公开注册无需邀请。这里可生成绑定邮箱的专属链接：注册有效期 7 天，密码恢复有效期 24 小时；恢复前需核对本人身份。</p>
+        <form id="inviteForm" class="invite-form">
+          <div class="form-field"><label for="inviteEmail">受邀邮箱</label><input type="email" id="inviteEmail" autocomplete="off" maxlength="254" placeholder="designer@example.com" required></div>
+          <div class="form-field"><label for="invitePurpose">链接用途</label><select id="invitePurpose"><option value="signup">创建新账号</option><option value="recovery">恢复已有账号</option></select></div>
+          <button class="primary-button" type="submit" id="createInvite">生成专属链接 <svg class="arrow-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></button>
+        </form>
+        <p id="inviteMessage" class="message" role="status" aria-live="polite" hidden></p>
+        <div class="invite-result" id="inviteResult" hidden>
+          <label for="inviteURL">专属链接 · 请立即复制保存</label><input id="inviteURL" type="text" readonly>
+          <div class="invite-result-footer"><p id="inviteExpiry" class="field-help"></p><button class="secondary-button" id="copyInvite" type="button">复制链接</button></div>
+          <p id="copyMessage" class="message" role="status" aria-live="polite" hidden></p>
+          <p class="field-help">服务器只保存邀请凭据的摘要，离开页面后无法重新查看此链接。恢复账号前请自行核对对方身份。</p>
+        </div>
+        <div id="invitationList" class="record-list"></div>
+      </section>
+      <section class="beta-section" aria-labelledby="membersHeading">
+        <div class="section-heading"><h2 id="membersHeading">设计师账号</h2><span class="muted">最近 200 位 · 只查看使用统计</span></div>
+        <p class="field-help">这里展示订单与版本数量、调用次数，不展示客户原话和报价内容。暂停账号会结束其登录，工作区继续保留。</p>
+        <p id="memberMessage" class="message" role="status" aria-live="polite" hidden></p>
+        <div id="memberList" class="record-list"></div>
+      </section>
+      <section class="beta-section" aria-labelledby="feedbackListHeading"><h2 id="feedbackListHeading">收到的反馈</h2><div id="feedbackList" class="record-list"></div></section>
+    </div>
+    <section class="beta-section" id="securityArea" aria-labelledby="securityHeading" hidden>
+      <h2 id="securityHeading">账号恢复密钥</h2>
+      <p class="field-help">忘记密码时，用邮箱和密钥恢复账号。重新生成后旧密钥立即失效；请输入当前密码确认。</p>
+      <form id="recoveryKeyForm" class="invite-form">
+        <div class="form-field"><label for="currentPassword">当前密码</label><input id="currentPassword" type="password" autocomplete="current-password" maxlength="128" required></div>
+        <button id="rotateRecoveryKey" class="secondary-button" type="submit">生成新的恢复密钥</button>
+      </form>
+      <p id="recoveryKeyMessage" class="message" role="status" aria-live="polite" hidden></p>
+      <div id="newRecoveryKeyArea" class="invite-result" hidden><label for="newRecoveryKey">恢复密钥 · 请复制并妥善保存</label><input id="newRecoveryKey" type="text" readonly autocomplete="off" spellcheck="false"><p class="field-help">刷新或离开页面后无法重新查看。不要把密钥发给任何人。</p></div>
+    </section>
+    <section class="beta-section feedback-section" aria-labelledby="feedbackHeading">
+      <div><h2 id="feedbackHeading">告诉我，哪里不好用</h2><p class="muted">反馈会发送给站点管理者。请描述发生了什么、预期是什么，避免粘贴客户隐私。</p></div>
+      <form id="feedbackForm">
+        <div class="form-field"><label for="feedbackCategory">反馈类型</label><select id="feedbackCategory"><option value="bug">遇到问题</option><option value="suggestion">改进建议</option><option value="pricing">报价体验</option></select></div>
+        <div class="form-field"><label for="feedbackText">具体情况</label><textarea id="feedbackText" rows="4" maxlength="2000" required placeholder="在哪一步遇到问题？你希望它怎么处理？"></textarea><p class="field-help">最多 2,000 字，只提交你主动填写的内容。</p></div>
+        <button class="primary-button" id="sendFeedback" type="submit">提交反馈 <svg class="arrow-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></button>
+        <p id="feedbackMessage" class="message" role="status" aria-live="polite" hidden></p>
+      </form>
+    </section>
+    <footer class="beta-footer">客户确认无需设计师账号 · <a href="data.html">使用与数据说明</a></footer>
+  </main>
+</body>
+</html>

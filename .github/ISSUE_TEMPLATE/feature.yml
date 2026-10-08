@@ -1,0 +1,25 @@
+name: 接单场景与需求
+description: 描述具体工作中的困难和现有处理办法
+labels: [enhancement]
+body:
+  - type: textarea
+    id: scenario
+    attributes:
+      label: 你的接单场景和遇到的问题
+    validations:
+      required: true
+  - type: textarea
+    id: workaround
+    attributes:
+      label: 现在如何处理，明单哪里可以帮助你
+    validations:
+      required: true
+  - type: dropdown
+    id: tried
+    attributes:
+      label: 是否已实际尝试
+      options:
+        - 只看过介绍或演示
+        - 已安装但没有完成订单
+        - 已完成一笔报价或客户确认
+        - 已用于多笔订单

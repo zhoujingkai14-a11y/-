@@ -1,0 +1,398 @@
+{
+  "app": "mingdan",
+  "version": "0.1.0",
+  "preparedAt": "2026-10-08T12:43:48.701Z",
+  "distribution": "portable-node-public-app",
+  "license": "AGPL-3.0-only",
+  "sourceHistoryIncluded": false,
+  "privateCredentialsIncluded": false,
+  "operationalDatabaseIncluded": false,
+  "customerDataIncluded": false,
+  "review": {
+    "scannedFiles": 76,
+    "secretFindings": 0,
+    "blockedPaths": 0
+  },
+  "files": [
+    {
+      "file": ".dockerignore",
+      "bytes": 345,
+      "sha256": "ed6bc5898ab0a1e600132ec49dbf4ba5a29ac1a9bda27a7e7e20ccd1888cdd68"
+    },
+    {
+      "file": ".env.example",
+      "bytes": 528,
+      "sha256": "f9a09fcd46605c1e38a24a14cd9a9fe185f5115b91a5f9a8c7a52319dca47880"
+    },
+    {
+      "file": ".gitattributes",
+      "bytes": 152,
+      "sha256": "63272108c9fb4f87a036ac094a0f45aca545738f44dd33e23e1f214f07ff3481"
+    },
+    {
+      "file": ".githooks/pre-commit",
+      "bytes": 69,
+      "sha256": "0533408dca57998a6839f075b03b0fff6fdf89d62bcb9924a85169d00943a5ab"
+    },
+    {
+      "file": ".github/ISSUE_TEMPLATE/bug.yml",
+      "bytes": 792,
+      "sha256": "1f877199145ce953690fda9d664fcd56aea4ba5eb104168c580d120b54bd5986"
+    },
+    {
+      "file": ".github/ISSUE_TEMPLATE/config.yml",
+      "bytes": 28,
+      "sha256": "1f103c6a9dd07cd13a9a6f17ace6b813f47747eb9cb7e00488cb2073caaf91bb"
+    },
+    {
+      "file": ".github/ISSUE_TEMPLATE/feature.yml",
+      "bytes": 669,
+      "sha256": "457bcbcb297c7632b9dfbcae39a658c59e1de9951b11e48edf60dd6b8cbcbfb9"
+    },
+    {
+      "file": ".github/dependabot.yml",
+      "bytes": 113,
+      "sha256": "e49b0bad89c4caf2a07bb3fa625ff431977115a81a39b455061e96534be291a0"
+    },
+    {
+      "file": ".github/pull_request_template.md",
+      "bytes": 197,
+      "sha256": "cc3ece6d8926f3043078a15f1897a19c8dc3324b71f4c847da35bac7ef8e5c18"
+    },
+    {
+      "file": ".github/workflows/ci.yml",
+      "bytes": 758,
+      "sha256": "fd3257e06a4aafa8d89eb77b343582ced892b5d17b5c55143a38e5cf2e673cad"
+    },
+    {
+      "file": ".gitignore",
+      "bytes": 398,
+      "sha256": "77804a788025576be4d8f66ddd9670479b6d4c4982c0b5c37a51395977110dda"
+    },
+    {
+      "file": "CONTRIBUTING.md",
+      "bytes": 887,
+      "sha256": "2ff4c6e6a33ed3a65eb5bfe24173d752fbb2be7e48cb38601a34649e4539084a"
+    },
+    {
+      "file": "LICENSE",
+      "bytes": 34020,
+      "sha256": "d8a6cc31abc16b6748c7a21f21611f5a1ec33f67d22ca23d7da1c19b95496bee"
+    },
+    {
+      "file": "NOTICE",
+      "bytes": 362,
+      "sha256": "c7d2d0a319b75e82c0e66efc246977c36c11e37fc32df30e28aef73b9c5d38c8"
+    },
+    {
+      "file": "README.md",
+      "bytes": 5036,
+      "sha256": "f537b3c707e06d83fa266573ea1d51c2c1e189a78109f00de4ee6701b490b888"
+    },
+    {
+      "file": "SECURITY.md",
+      "bytes": 851,
+      "sha256": "42870dea07c2e004be5cc516a66c53a9b8acb6b72db7400aceedde6fc573e6a2"
+    },
+    {
+      "file": "THIRD_PARTY_NOTICES.md",
+      "bytes": 1682,
+      "sha256": "f70b9e495e85abd648175ae9ff0ab82b2f6db3760869944ab27ebb32a712b5d6"
+    },
+    {
+      "file": "deploy/public-backup.mjs",
+      "bytes": 789,
+      "sha256": "a834a3f3a73bf8cd335966ee774fbb351d02ef3c530edf4a9a0c487daec36bba"
+    },
+    {
+      "file": "deploy/public-compose.yaml",
+      "bytes": 1945,
+      "sha256": "b7dbf80361ffd67a3b18b35d8689547184c4d73472e6bb281b7843400e408759"
+    },
+    {
+      "file": "deploy/public-node.mjs",
+      "bytes": 7570,
+      "sha256": "d5804b2c97f8476673d3c1b5294d575b47ebba75c7b786645f8ae778de3983be"
+    },
+    {
+      "file": "deploy/public-node.test.mjs",
+      "bytes": 7068,
+      "sha256": "d10f5b731ebdef6da9df839f7145d60226f2c38df24f0dfa0c8dff9bd9e2e466"
+    },
+    {
+      "file": "deploy/public.Caddyfile",
+      "bytes": 143,
+      "sha256": "71c5ca502ca614c06c654e8b4aeb57ca52a8c7d582a2470165c58c645b272293"
+    },
+    {
+      "file": "deploy/public.Dockerfile",
+      "bytes": 602,
+      "sha256": "979633d87d1f92f0afc27956c7cfdea52696706b16fa2ed66e48811abb1c7408"
+    },
+    {
+      "file": "docs/DEPLOYMENT.md",
+      "bytes": 2702,
+      "sha256": "39033af47a76bbe2d28fb54458b2408ed05bb096c6d3479e439599478d07a5b9"
+    },
+    {
+      "file": "docs/GITHUB-PUBLISH.md",
+      "bytes": 1837,
+      "sha256": "9d018cc3488517e4a3daea90896e207bdf429f6d100e66e9ddf974c4a544ae8e"
+    },
+    {
+      "file": "docs/PUBLICATION-CHECK.md",
+      "bytes": 1556,
+      "sha256": "218565c84b43159cc19ad9be4a1239f0f5d74a7a340f43d16a06c6cbf73f9cb3"
+    },
+    {
+      "file": "package-lock.json",
+      "bytes": 266,
+      "sha256": "da40a8fd4a199af8eef586c037b0e3e40170a541312760709663c42d09c2b23f"
+    },
+    {
+      "file": "package.json",
+      "bytes": 783,
+      "sha256": "d16b4792181a97b270f8de105d406dc8d55086aaaec6598546af2abe98a7c7fe"
+    },
+    {
+      "file": "sites-mingdan/drizzle/0000_tense_justin_hammer.sql",
+      "bytes": 1216,
+      "sha256": "03ede56fcb621bf136258d55de9a99f7f3345da9fea6a8447492e7984b5d45b4"
+    },
+    {
+      "file": "sites-mingdan/drizzle/0001_curved_titania.sql",
+      "bytes": 3060,
+      "sha256": "b3f3bc04f3f7cb918b16f0f4205e821de7308b2345b281106fbc778f9ee3b6a6"
+    },
+    {
+      "file": "sites-mingdan/drizzle/0002_breezy_edwin_jarvis.sql",
+      "bytes": 49,
+      "sha256": "3d189ec3b9d388a040df616baa7d5f974b4e95c681003ac427d27a0b127a3e9d"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/account.css",
+      "bytes": 10617,
+      "sha256": "9a16ff170d3d71885ea63ed1045b48444247894bb77a0c2c36297ee784d5dd4c"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/account.html",
+      "bytes": 5748,
+      "sha256": "ad3ca375a7a7e3feb22b8b37a8bff9967197b3ae8f27fbe4f52f6074fd3fb51c"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/account.js",
+      "bytes": 8020,
+      "sha256": "4e17395ff9fd5fbaf42ba36022e45a8d226c0548d16d2f5e143c5c5d452c1f7a"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/beta.html",
+      "bytes": 7794,
+      "sha256": "4a0ab902aef33c8b36203bb0a38329032261937d7aa5b554aeab127adadc2d58"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/beta.js",
+      "bytes": 15037,
+      "sha256": "0faa854596c023f74f9950a83de12949e552788db39e3c18663403b0ed655d5c"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/cinematic.css",
+      "bytes": 11695,
+      "sha256": "a1f9e9c54db2444c2f81dbb299970080db3b8af63757a9273b3ff949057c776f"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/customer.html",
+      "bytes": 1207,
+      "sha256": "a4e88874d86b7b00925d8efc35bf6fa829ac27dc6423ba476b7b3105c9336db8"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/customer.js",
+      "bytes": 9936,
+      "sha256": "014d9460eb4ff6634cf87fe2acd85fe0045c1242d6db326edfa0e5b3ae930fc0"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/data.html",
+      "bytes": 3659,
+      "sha256": "aff574c4a9a43e34397fd954ee18d309d2666bdad457b64cbe63a0d52f3bad05"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/engine.js",
+      "bytes": 12538,
+      "sha256": "5b38ede34e9659b328eb94bf23786e25fee4b2b56cc97a73083782fac9de4ede"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/glass-atrium.webp",
+      "bytes": 176730,
+      "sha256": "2c1848d2625549e729a570fd3e41bb143337cea511b38f75f1f63a15c247a3ed"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/glass-motion.js",
+      "bytes": 8407,
+      "sha256": "e423f808d29733b9be92f050c394d649c70c25d046e900c00363f04ffa03d0e1"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/glass.css",
+      "bytes": 10171,
+      "sha256": "571eeb48c030e8c958fe32ea8c33c8502c45814e1afb4a87dfde00ba5c9426d2"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/index.html",
+      "bytes": 295,
+      "sha256": "78fcb7f836e5a93977f8cf548dbff89722f8a392a039b42bb287aaf857f23f7d"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/motion.js",
+      "bytes": 4062,
+      "sha256": "7396f1106803b6f405a7261963a98b873b937e4eee1e39221e3eedbaaf1c126e"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/narrative.css",
+      "bytes": 7843,
+      "sha256": "7cba904fcdafff9c5ed73b5182279018979cc661c4b41e6a55053bcea66f4f4a"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/pricing-engine.mjs",
+      "bytes": 9460,
+      "sha256": "9a42cdc5617d3690bd2439217a6219762509a6c207bd7cd3731d1bc7d5f3dcf0"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/pricing.css",
+      "bytes": 2970,
+      "sha256": "78d8565be718319853310326d1146a4d4e56a7f6209b0442721d15853af72f24"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/pricing.js",
+      "bytes": 37576,
+      "sha256": "d68a0cff6c888ec2e03754944e3c36612ce4c0e18c7ea1e3bb324889fcbde4ad"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/showcase.css",
+      "bytes": 13258,
+      "sha256": "3e1988ff7c5a422789f6e1b4d46ce41e2c2acba85935fe5e10389b41e1227272"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/showcase.html",
+      "bytes": 8445,
+      "sha256": "d983ae3b8dd37fe30b0a4f37a3732db2b21995926d32a08dcd005b71b1caef8b"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/showcase.js",
+      "bytes": 7725,
+      "sha256": "59856f6d47f6e38d382af9cceef3f3917b6fdc68aaa80b2c40ddf83509780435"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/stage3.css",
+      "bytes": 1214,
+      "sha256": "ebf1da7ae169b2de01f6f311e50be9fee6ac89187c2b63b38c359b8c19e634ad"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/stage4.css",
+      "bytes": 6247,
+      "sha256": "856bfec24d69bad002ea4757a6d4323b835307bdb6a97538dcb5d406340d089d"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/stage4.js",
+      "bytes": 24746,
+      "sha256": "9076a05d7cce30883fe43493da60143670bf9be8130edc0fc74dc087f58d1669"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/studio.css",
+      "bytes": 19474,
+      "sha256": "4eeecf4c8fdad2e642ca81d95e3e8c002f65af4b71db8e374703cad83528b9f9"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/v2.html",
+      "bytes": 3107,
+      "sha256": "f962cedbdfdbd08587e12c50a115b227b9f32574f9bb8abff4b14e15860fbea3"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/v2.js",
+      "bytes": 85077,
+      "sha256": "7c71577897b11f2cdb229c1fff33bf985e64ecf111848a4bfcc0436626232950"
+    },
+    {
+      "file": "sites-mingdan/public/prototype/webmcp.js",
+      "bytes": 1324,
+      "sha256": "92cfbd77ebc5865b0482a419ed51be6d9bb404f269b253cbefca8016100973a9"
+    },
+    {
+      "file": "sites-mingdan/server/accounts.mjs",
+      "bytes": 11422,
+      "sha256": "5f9e1d4f743ab12e3d6d2fae7a04101c6c524e20303180abda6c528560ed392d"
+    },
+    {
+      "file": "sites-mingdan/server/ai.mjs",
+      "bytes": 13457,
+      "sha256": "16233751f8455de567608bd8554aaa4059dea5913501c0cbec93457a093a4c0d"
+    },
+    {
+      "file": "sites-mingdan/server/ai.test.mjs",
+      "bytes": 8571,
+      "sha256": "23224441a15c22e71522ea1f50e43fb0aad6470c1f1e15252da2ced478ad8bc5"
+    },
+    {
+      "file": "sites-mingdan/server/pricing-advice.mjs",
+      "bytes": 11407,
+      "sha256": "0211e868aa6684190f983eb498f7f24cc7b6b5048aca4f99aac5b93c0c0d5338"
+    },
+    {
+      "file": "sites-mingdan/server/pricing-advice.test.mjs",
+      "bytes": 7467,
+      "sha256": "2fa23d08829d6c40408c7a2bf508ae910a242aa027ad9784252f6eb389b6fbad"
+    },
+    {
+      "file": "sites-mingdan/server/pricing.test.mjs",
+      "bytes": 5268,
+      "sha256": "9568a1889c8edf7b8be8a72e31da41fa69d6d3155211e74b4b92c19563150bfc"
+    },
+    {
+      "file": "sites-mingdan/server/usage.mjs",
+      "bytes": 8933,
+      "sha256": "9af0cea02bc3b5f6ef3873957005125999441a067180c37240587ae1c2ddac4f"
+    },
+    {
+      "file": "sites-mingdan/server/validation.mjs",
+      "bytes": 6655,
+      "sha256": "0b496f926ab9d0e063635bf1b983c37bab277c8f40119b2f523f311940cbceef"
+    },
+    {
+      "file": "sites-mingdan/server/worker.mjs",
+      "bytes": 28352,
+      "sha256": "5f26ed45351f64f1aae2e8f940c04fccd2e0379b24d27d8b1282d2c188a193eb"
+    },
+    {
+      "file": "sites-mingdan/tests/beta.test.mjs",
+      "bytes": 17534,
+      "sha256": "64f25fff666c159562810423d1252d27ca1d8947dcfe614f8f92799488104b36"
+    },
+    {
+      "file": "sites-mingdan/tests/public-launch.test.mjs",
+      "bytes": 9672,
+      "sha256": "1e5a7dc2bd946d29b91494354d9694ac673a12a01b4fefe8b42bbabd7befc68f"
+    },
+    {
+      "file": "sites-mingdan/tests/support.mjs",
+      "bytes": 4811,
+      "sha256": "b79e757554175cc99795233d0084fe22ab910cecdd4af2a41ab72acfdc764344"
+    },
+    {
+      "file": "sites-mingdan/tests/worker.test.mjs",
+      "bytes": 12174,
+      "sha256": "f740b9e7f42d932683acfbc699bb9e4ece8cf06ed7dc368b4455d1c4d96334ed"
+    },
+    {
+      "file": "tools/check-publication.mjs",
+      "bytes": 9943,
+      "sha256": "866178904009974d14eca20597ebf31396e9fc76a405f5e9d80995d466e8dc80"
+    },
+    {
+      "file": "tools/configure.mjs",
+      "bytes": 2515,
+      "sha256": "e9bc3a0f587dc68e425a3cdb4b8878547936d5728cb292c4c519cc8afd0f2310"
+    },
+    {
+      "file": "tools/publication-check.test.mjs",
+      "bytes": 7579,
+      "sha256": "790f1bf9f8c6ce3499945106540ddc490d238f5d49a23fb6afe1e925c51277b2"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: deploy/public.Dockerfile
+    restart: unless-stopped
+    init: true
+    stop_grace_period: 100s
+    environment:
+      HOST: 0.0.0.0
+      PORT: "8765"
+      MINGDAN_PUBLIC_URL: https://${MINGDAN_DOMAIN:?Set MINGDAN_DOMAIN}
+      MINGDAN_ADMIN_PASSWORD: ${MINGDAN_ADMIN_PASSWORD:?Set MINGDAN_ADMIN_PASSWORD}
+      MINGDAN_DATABASE: /data/mingdan-public.sqlite
+      MINGDAN_TRUST_PROXY: "1"
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:?Set DEEPSEEK_API_KEY}
+      DEEPSEEK_MODEL: ${DEEPSEEK_MODEL:-deepseek-flash}
+      MINGDAN_REGISTRATION_MODE: ${MINGDAN_REGISTRATION_MODE:-public}
+      MINGDAN_BETA_MAX_USERS: ${MINGDAN_BETA_MAX_USERS:-0}
+      MINGDAN_AI_MONTHLY_BUDGET_CNY: ${MINGDAN_AI_MONTHLY_BUDGET_CNY:-0}
+      MINGDAN_AI_USER_DAILY_LIMIT: ${MINGDAN_AI_USER_DAILY_LIMIT:-0}
+      MINGDAN_AI_USER_MONTHLY_LIMIT: ${MINGDAN_AI_USER_MONTHLY_LIMIT:-0}
+      MINGDAN_AI_USER_MINUTE_LIMIT: ${MINGDAN_AI_USER_MINUTE_LIMIT:-2}
+      MINGDAN_AI_HOURLY_LIMIT: ${MINGDAN_AI_HOURLY_LIMIT:-200}
+    volumes:
+      - mingdan_public_data:/data
+    expose:
+      - "8765"
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:8765/api/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      retries: 3
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+  proxy:
+    image: caddy:2
+    restart: unless-stopped
+    environment:
+      MINGDAN_DOMAIN: ${MINGDAN_DOMAIN:?Set MINGDAN_DOMAIN}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./public.Caddyfile:/etc/caddy/Caddyfile:ro
+      - mingdan_public_caddy_data:/data
+      - mingdan_public_caddy_config:/config
+    depends_on:
+      app:
+        condition: service_healthy
+volumes:
+  mingdan_public_data:
+  mingdan_public_caddy_data:
+  mingdan_public_caddy_config:

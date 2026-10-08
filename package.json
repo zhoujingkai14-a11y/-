@@ -1,0 +1,20 @@
+{
+  "name": "mingdan",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "AGPL-3.0-only",
+  "description": "AI-assisted design brief, personal pricing and version confirmation workspace.",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "configure": "node tools/configure.mjs",
+    "start": "node --env-file-if-exists=.env deploy/public-node.mjs",
+    "test": "node --test --test-concurrency=1",
+    "backup": "node --env-file-if-exists=.env deploy/public-backup.mjs",
+    "check:publication": "node tools/check-publication.mjs . --release",
+    "check:git": "node tools/check-publication.mjs . --git --release",
+    "hooks": "node -e \"require('node:fs').chmodSync('.githooks/pre-commit', 0o755)\" && git config core.hooksPath .githooks"
+  }
+}

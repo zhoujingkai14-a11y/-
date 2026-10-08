@@ -1,0 +1,29 @@
+name: 使用问题
+description: 提交可复现的问题，请使用虚构或脱敏数据
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: 请勿提交密钥、恢复码、客户确认链接、真实订单或数据库。安全漏洞请使用 SECURITY.md 的私密报告流程。
+  - type: textarea
+    id: expected
+    attributes:
+      label: 你预期发生什么
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际发生了什么
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤与虚构示例
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 应用版本、系统、浏览器与 Node 版本
